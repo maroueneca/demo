@@ -2,6 +2,7 @@ pipeline {
 
   environment {
     registry = "172.42.42.100:5000/justme/myweb"
+    path="demo-job/."
     dockerImage = ""
   }
 
@@ -18,7 +19,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER" demo-job/
+          dockerImage = docker.build registry + ":$BUILD_NUMBER" path
         }
       }
     }

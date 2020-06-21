@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "172.42.42.100:5000/justme/myweb"
+    registry = "172.17.0.2:5000/"
     dockerImage = ""
   }
 

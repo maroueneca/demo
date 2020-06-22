@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "172.42.42.100:5000/justme/myweb"  # à modifier
+    registry = "172.42.42.100:5000/justme/myweb"  
     dockerImage = ""
   }
 
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/maroueneMM/demo.git' # à modifier
+        git 'https://github.com/maroueneMM/demo.git'
        }
     }
 
@@ -38,7 +38,7 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")   #mykubeconfig doit etre en jenkins configurer
+          kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")   
         }
       }
     }
